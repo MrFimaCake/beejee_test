@@ -89,8 +89,6 @@ class Application
             return $controller(404, $e->getMessage())->send();
         } catch (\PDOException $e) {
 
-            die(var_dump($e->getMessage()));
-
             $controller = new ErrorController($this->request, $this->config, $dataMapper);
 
             return $controller(404, "Database error")->send();
