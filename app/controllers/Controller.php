@@ -22,7 +22,7 @@ abstract class Controller
     protected $config;
     protected $dataMapper;
 
-    public function __construct(Request $request, Config $config, DataMapper $dataMapper)
+    public function __construct(Request $request, Config $config, DataMapper $dataMapper = null)
     {
         $this->request = $request;
         $this->config = $config;

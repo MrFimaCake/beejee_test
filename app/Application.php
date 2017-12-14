@@ -89,7 +89,7 @@ class Application
             return $controller(404, $e->getMessage())->send();
         } catch (\PDOException $e) {
 
-            $controller = new ErrorController($this->request, $this->config, $dataMapper);
+            $controller = new ErrorController($this->request, $this->config);
 
             return $controller(404, "Database error")->send();
         } catch (\Exception $e) {
