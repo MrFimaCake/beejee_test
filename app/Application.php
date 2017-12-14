@@ -91,10 +91,9 @@ class Application
 
             $controller = new ErrorController($this->request, $this->config);
 
-            return $controller(404, "Database error")->send();
+            return $controller(500, "Database error")->send();
         } catch (\Exception $e) {
             return Response::createWithRedirect('/')->send();
         }
-
     }
 }
